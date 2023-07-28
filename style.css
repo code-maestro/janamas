@@ -100,6 +100,7 @@ body {
   font-weight: 500;
   line-height: 1.6;
   margin: 0;
+  width: 100%;
 }
 
 h1,
@@ -544,6 +545,12 @@ img.zoom-in {
   transition: background-color 0.3s ease;
 }
 
+section {
+  background-color: transparent;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
 .site-header.sticky {
   background-color: var(--white-color);
 }
@@ -671,11 +678,11 @@ img.zoom-in {
 .product-store {
   padding: 2rem 0;
 }
- 
-.product-store .swiper-wrapper  {
+
+.product-store .swiper-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content:  center;
+  justify-content: center;
 }
 
 .product-store .product-card .cart-concern {
@@ -1043,9 +1050,7 @@ h5.widget-title {
   .product-tabs .review-item .image-holder {
     margin-bottom: 10px;
   }
-}
 
-@media screen and (max-width: 991px) {
   .cart-header {
     display: none;
   }
@@ -1081,6 +1086,7 @@ h5.widget-title {
   .table>:not(caption)>*>* {
     padding: 1rem;
   }
+
 }
 
 /* 4.5 Blog Page
@@ -1199,4 +1205,66 @@ h5.widget-title {
 
 .card-detail button:hover::after {
   transform: translate(50%, 0) scale(1.1);
+}
+
+
+#mit_lottie {
+  display: flex;
+  flex-direction: row;
+}
+
+
+#mit_lottie>div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+
+#how_to_order .container .row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 0 2rem;
+}
+
+
+#how_to_order .container .row div h3 {
+  text-align: center;
+}
+
+@media only screen and (max-width: 564px) {
+
+  #how_to_order {
+    padding: 1rem 0;
+  }
+
+  #mit_lottie {
+    flex-direction: column;
+  }
+
+  #mit_lottie>div {
+    width: 100%;
+  }
+
+  .image-holder {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .image-holder img {
+    width: 200px;
+    height: 200px;
+    padding: .5rem 0;
+    display: flex;
+    align-items: center;
+  }
+
+  lottie-player {
+    display: none;
+  }
 }
