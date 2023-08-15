@@ -140,7 +140,7 @@
                   </li>
 
                   <li class="nav-item">
-                    <a class="nav-link me-0" href="#footer"> Contact Us </a>
+                    <a class="nav-link me-0" href="#products"> Contact Us </a>
                   </li>
 
                   <li class="nav-item">
@@ -313,7 +313,7 @@
                       <span class="circle" aria-hidden="true">
                         <span class="icon arrow"></span>
                       </span>
-                      <span class="button-text" onclick="start('Breva Tomato Sauce - 5kg')"> ORDER NOW </span>
+                      <span class="button-text"> ORDER NOW </span>
                     </button>
                   </div>
                 </div>
@@ -365,7 +365,7 @@
                       <span class="circle" aria-hidden="true">
                         <span class="icon arrow"></span>
                       </span>
-                      <span class="button-text" onclick="start('Breva Chill sauce')"> ORDER NOW </span>
+                      <span class="button-text"> ORDER NOW </span>
                     </button>
                   </div>
                 </div>
@@ -375,6 +375,7 @@
         </div>
       </div>
     </section>
+
 
     <section id="how_to_order" class="padding-xlarge">
       <div class="container">
@@ -862,113 +863,55 @@
       </div>
     </div>
 
-    <div class="modal fade" id="theeModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-          <form class="form" enctype="multipart/form-data" method="post" id="placeOrder" name="placeOrder">
+        <div class="modal-content pt-2 px-2">
 
-            <div class="flex-row">
-              <button class="btn google" id="liveAlertPlaceholder">
-                PLACE YOUR ORDER
-              </button>
-            </div>
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel"> Place Your Order </h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
 
-            <div class="flex-column">
-              <label> Product Name </label>
-            </div>
-            <div class="inputForm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bottle-filled" width="24"
-                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path
-                  d="M13 1a2 2 0 0 1 1.995 1.85l.005 .15v.5c0 1.317 .381 2.604 1.094 3.705l.17 .25l.05 .072a9.093 9.093 0 0 1 1.68 4.92l.006 .354v6.199a3 3 0 0 1 -2.824 2.995l-.176 .005h-6a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-6.2a9.1 9.1 0 0 1 1.486 -4.982l.2 -.292l.05 -.069a6.823 6.823 0 0 0 1.264 -3.957v-.5a2 2 0 0 1 1.85 -1.995l.15 -.005h2zm.362 5h-2.724a8.827 8.827 0 0 1 -1.08 2.334l-.194 .284l-.05 .069a7.091 7.091 0 0 0 -1.307 3.798l-.003 .125a3.33 3.33 0 0 1 1.975 -.61a3.4 3.4 0 0 1 2.833 1.417c.27 .375 .706 .593 1.209 .583a1.4 1.4 0 0 0 1.166 -.583a3.4 3.4 0 0 1 .81 -.8l.003 .183c0 -1.37 -.396 -2.707 -1.137 -3.852l-.228 -.332a8.827 8.827 0 0 1 -1.273 -2.616z"
-                  stroke-width="0" fill="currentColor"></path>
-              </svg>
-              <input id="ProductName" placeholder="Enter your Product Name" class="input" type="text">
-            </div>
+          <form class="row g-3 " enctype="multipart/form-data" method="post" id="placeOrder" name="placeOrder">
+            <div class="modal-body">
+              <div id="liveAlertPlaceholder"></div>
+              <div class="col-md-12">
+                <label for="ProductName" class="form-label"> Product Name </label>
+                <input type="text" class="form-control" id="ProductName" name="ProductName" aria-describedby="emailHelp"
+                  readonly>
+              </div>
 
-            <div class="flex-column">
-              <label> Product Quantity </label>
-            </div>
-            <div class="inputForm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-scale" width="24" height="24"
-                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M7 20l10 0"></path>
-                <path d="M6 6l6 -1l6 1"></path>
-                <path d="M12 3l0 17"></path>
-                <path d="M9 12l-3 -6l-3 6a3 3 0 0 0 6 0"></path>
-                <path d="M21 12l-3 -6l-3 6a3 3 0 0 0 6 0"></path>
-              </svg>
-              <input id="ProductQnty" placeholder="Enter Product Quantity" class="input" type="text">
-            </div>
+              <div class="col-md-12">
+                <label for="ProductQnty" class="form-label"> Product Quantity </label>
+                <input type="text" class="form-control" id="ProductQnty" aria-describedby="ProductQnty" required>
+              </div>
 
-            <div class="flex-column">
-              <label> Enter Your Name </label>
-            </div>
-            <div class="inputForm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24"
-                viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
-                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
-              </svg>
-              <input id="userName" placeholder="Enter Your Name " class="input" type="text">
-            </div>
+              <div class="col-md-12">
+                <label for="userName" class="form-label"> Enter your Name </label>
+                <input type="text" class="form-control" id="userName" aria-describedby="userName" required>
+              </div>
 
-            <div class="flex-column">
-              <label> Enter Your Email Address </label>
-            </div>
-            <div class="inputForm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-mail-filled" width="24"
-                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path
-                  d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z"
-                  stroke-width="0" fill="currentColor"></path>
-                <path
-                  d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z"
-                  stroke-width="0" fill="currentColor"></path>
-              </svg>
-              <input id="userEmail" placeholder="Enter Your Email Address" class="input" type="email">
-            </div>
+              <div class="col-md-12">
+                <label for="userEmail" class="form-label"> Your Email Address </label>
+                <input type="email" class="form-control" id="userEmail" aria-describedby="userEmail" required>
+              </div>
 
-            <div class="flex-column">
-              <label> Enter Your Phone Number </label>
-            </div>
-            <div class="inputForm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-device-mobile-filled"
-                width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path
-                  d="M16 2a3 3 0 0 1 2.995 2.824l.005 .176v14a3 3 0 0 1 -2.824 2.995l-.176 .005h-8a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h8zm-4 14a1 1 0 0 0 -.993 .883l-.007 .117l.007 .127a1 1 0 0 0 1.986 0l.007 -.117l-.007 -.127a1 1 0 0 0 -.993 -.883zm1 -12h-2l-.117 .007a1 1 0 0 0 0 1.986l.117 .007h2l.117 -.007a1 1 0 0 0 0 -1.986l-.117 -.007z"
-                  stroke-width="0" fill="currentColor"></path>
-              </svg>
-              <input id="userPhone" placeholder="Enter Your Phone Number" class="input" type="tel">
-            </div>
+              <div class="col-md-12">
+                <label for="userPhone" class="form-label"> Your Phone Number </label>
+                <input type="number" class="form-control" id="userPhone" aria-describedby="userPhone" required>
+              </div>
 
-            <div class="flex-column">
-              <label> Enter Your Location </label>
-            </div>
-            <div class="inputForm">
-              <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin-filled" width="24"
-                height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
-                stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                <path
-                  d="M18.364 4.636a9 9 0 0 1 .203 12.519l-.203 .21l-4.243 4.242a3 3 0 0 1 -4.097 .135l-.144 -.135l-4.244 -4.243a9 9 0 0 1 12.728 -12.728zm-6.364 3.364a3 3 0 1 0 0 6a3 3 0 0 0 0 -6z"
-                  stroke-width="0" fill="currentColor"></path>
-              </svg>
-              <input id="userLocation" placeholder="Enter Your Location" class="input" type="text">
-            </div>
+              <div class="col-md-12">
+                <label for="userAddress" class="form-label"> Your Location </label>
+                <input type="text" class="form-control" id="userLocation" aria-describedby="userAddress" required>
+              </div>
 
-            <button type="submit" class="button-submit"> PLACE ORDER </button>
-
+            </div>
+            <div class="modal-footer">
+              <!-- <button type="button" class="btn" data-bs-dismiss="modal">Close</button> -->
+              <button type="submit" class="btn btn-primary"> PLACE ORDER </button>
+            </div>
           </form>
         </div>
       </div>

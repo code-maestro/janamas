@@ -1,6 +1,6 @@
 
 const start = (param) => {
-  $('#exampleModal').modal('show');
+  $('#theeModal').modal('show');
   document.getElementById(`ProductName`).setAttribute('value', param);
 
 }
@@ -9,7 +9,6 @@ const start = (param) => {
 async function placeOrder() {
 
   try {
-
     // post body data 
     const newMessage = {
       sender_name: document.getElementById(`userName`).value,
@@ -29,15 +28,13 @@ async function placeOrder() {
       }
     }
 
-
     // PRODUCTION
-    const response = await fetch(`https://janamas-email-api.onrender.com/api/send-email`, options);
+    // const response = await fetch(`https://janamas-email-api.onrender.com/api/send-email`, options);
 
     // TEST
-    // const response = await fetch('http://localhost:3400/api/send-email', options);
+    const response = await fetch('http://localhost:3400/api/send-email', options);
 
     console.log(response);
-
 
     if (!response.ok) {
 
